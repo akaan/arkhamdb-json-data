@@ -1,61 +1,64 @@
 {
-    "additionalProperties": false,
-    "properties": {
-        "code": {
-            "minLength": 1,
-            "type": "string"
+    "type": "array",
+    "items": {
+        "additionalProperties": false,
+        "properties": {
+            "code": {
+                "minLength": 1,
+                "type": "string"
+            },
+            "cycle_code": {
+                "minLength": 1,
+                "type": "string"
+            },
+            "date_release": {
+                "oneOf": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "cgdb_id": {
+                "oneOf": [
+                    {
+                        "type": "integer"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "name": {
+                "minLength": 1,
+                "type": "string"
+            },
+            "position": {
+                "minimum": 1,
+                "type": "integer"
+            },
+            "size": {
+                "oneOf": [
+                    {
+                        "minimum": 1,
+                        "type": "integer"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            }
         },
-        "cycle_code": {
-            "minLength": 1,
-            "type": "string"
-        },
-        "date_release": {
-            "oneOf": [
-                {
-                    "type": "string"
-                },
-                {
-                    "type": "null"
-                }
-            ]
-        },
-        "cgdb_id": {
-            "oneOf": [
-                {
-                    "type": "integer"
-                },
-                {
-                    "type": "null"
-                }
-            ]
-        },
-        "name": {
-            "minLength": 1,
-            "type": "string"
-        },
-        "position": {
-            "minimum": 1,
-            "type": "integer"
-        },
-        "size": {
-            "oneOf": [
-                {
-                    "minimum": 1,
-                    "type": "integer"
-                },
-                {
-                    "type": "null"
-                }
-            ]
-        }
-    },
-    "required": [
-        "code",
-        "cycle_code",
-        "name",
-        "position",
-        "date_release",
-        "size"
-    ],
-    "type": "object"
+        "required": [
+            "code",
+            "cycle_code",
+            "name",
+            "position",
+            "date_release",
+            "size"
+        ],
+        "type": "object"
+    }
 }

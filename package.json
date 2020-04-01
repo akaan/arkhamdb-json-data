@@ -4,7 +4,12 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "validate": "npm-run-all validate:*",
         "validate:cards": "ajv validate -s schema/card_schema.json -d \"pack/**/*.json\"",
+        "validate:cycles": "ajv validate -s schema/cycle_schema.json -d \"cycles.json\"",
+        "validate:factions": "ajv validate -s schema/faction_schema.json -d \"factions.json\"",
+        "validate:packs": "ajv validate -s schema/pack_schema.json -d \"packs.json\"",
+        "validate:types": "ajv validate -s schema/type_schema.json -d \"types.json\"",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
@@ -15,6 +20,7 @@
     },
     "devDependencies": {
         "ajv": "^6.12.0",
-        "ajv-cli": "^3.1.0"
+        "ajv-cli": "^3.1.0",
+        "npm-run-all": "^4.1.5"
     }
 }
